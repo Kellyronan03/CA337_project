@@ -19,4 +19,4 @@ def predict():
     prediction = model.predict(features.transform([review]))[0]
     return render_template('predict.html',result={'text':review,'prediction':prediction})
 
-app.run(host='0.0.0.0', port=5000)
+app.run(host='0.0.0.0', port=8000)
