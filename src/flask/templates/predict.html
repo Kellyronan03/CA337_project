@@ -3,7 +3,17 @@
 <title>CA337 Film Review Classifier</title>
 </head>
 <body>
-	The classifier prediction is: <br><br>
-	{{ result }}
+    <form action="/predict" method="post">
+        The review classifier uses a Naive Bayes model trained on IMDb reviews.<br>
+        Enter a review: <input type="text" name="review_text">
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if result %}
+    <p>
+        Review: {{ result.text }}<br>
+        Classifier Prediction: {{ result.prediction }}
+    </p>
+    {% endif %}
 </body>
 </html>
