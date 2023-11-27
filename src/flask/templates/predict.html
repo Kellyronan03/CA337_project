@@ -1,19 +1,27 @@
 <html>
 <head>
-<title>CA337 Film Review Classifier</title>
+    <title>CA337 Film Review Classifier</title>
 </head>
 <body>
     <form action="/predict" method="post">
-        The review classifier uses a Naive Bayes model trained on IMDb reviews.<br>
-        Enter a review: <input type="text" name="review_text">
+        The review classifier uses several models trained on IMDb reviews.<br>
+        Select a model: 
+        <select name="model_selection">
+            <option value="model_nb">Naive Bayes</option>
+            <option value="model_lr">Logistic Regression</option>
+            <option value="model_rf">Random Forest</option>
+        </select><br>
+        Enter a review: <br>
+        <textarea name="review_text" rows="4" cols="50"></textarea><br>
         <input type="submit" value="Submit">
     </form>
 
     {% if result %}
     <p>
         Review: {{ result.text }}<br>
-        Classifier Prediction: {{ result.prediction }}
+        Classifier Prediction: {{ result.prediction }} using {{ result.model_used }}
     </p>
     {% endif %}
 </body>
 </html>
+
