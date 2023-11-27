@@ -51,7 +51,7 @@ def predict():
         selected_model_name = model_names.get(selected_model_id, "Unknown Model")
         model_to_use = models[selected_model_id]
         prediction = model_to_use.predict(features.transform([review]))[0]
-
+        
     # Convert numerical prediction to string
     prediction_text = 'Positive' if prediction == 1 else 'Negative'
     return render_template('predict.html', result={'text': review, 'prediction': prediction_text, 'model_used': selected_model_name})
