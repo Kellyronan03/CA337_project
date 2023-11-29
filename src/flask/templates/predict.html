@@ -1,27 +1,42 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>CA337 Film Review Classifier</title>
+    <link rel="stylesheet" href="//static/style.css">
 </head>
 <body>
-    <form action="/predict" method="post">
-        The review classifier uses several models trained on IMDb reviews.<br>
-        Select a model: 
-        <select name="model_selection">
-            <option value="model_nb">Naive Bayes</option>
-            <option value="model_lr">Logistic Regression</option>
-            <option value="model_rf">Random Forest</option>
-        </select><br>
-        Enter a review: <br>
-        <textarea name="review_text" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <h1>Film Review Classifier</h1>
+        <p>The review classifier uses several models trained on IMDb reviews.</p>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="model_selection">Select a Model:</label>
+                <select id="model_selection" name="model_selection">
+                    <option value="model_nb">Naive Bayes</option>
+                    <option value="model_lr">Logistic Regression</option>
+                    <option value="model_rf">Random Forest</option>
+                    <!-- Add more models as needed -->
+                </select>
+            </div>
 
-    {% if result %}
-    <p>
-        Review: {{ result.text }}<br>
-        Classifier Prediction: {{ result.prediction }} using {{ result.model_used }}
-    </p>
-    {% endif %}
+            <div class="form-group">
+                <label for="review_text">Enter a Review:</label>
+                <textarea id="review_text" name="review_text" rows="4" cols="50" placeholder="Enter a film review here..."></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Result Display (if result exists) -->
+        {% if result %}
+            <div class="result">
+                <p>Review: {{ result.text }}</p>
+                <p>Classifier Prediction: {{ result.prediction }} using {{ result.model_used }}</p>
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
+
+
 
