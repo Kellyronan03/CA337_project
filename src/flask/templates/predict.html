@@ -2,16 +2,18 @@
 <html>
 <head>
     <title>CA337 Film Review Classifier</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Film Review Classifier</h1>
-        <p>The review classifier uses several models trained on IMDb reviews.</p>
-        <form action="/predict" method="post">
+    <div class="container my-5">
+        <h1 class="text-center">Film Review Classifier</h1>
+        <p class="text-center">The review classifier uses several models trained on IMDb reviews.</p>
+        
+        <form action="/predict" method="post" class="text-center">
             <div class="form-group">
                 <label for="model_selection">Select a Model:</label>
-                <select id="model_selection" name="model_selection">
+                <select id="model_selection" name="model_selection" class="form-control">
                     <option value="model_nb">Naive Bayes</option>
                     <option value="model_lr">Logistic Regression</option>
                     <option value="model_rf">Random Forest</option>
@@ -21,22 +23,24 @@
 
             <div class="form-group">
                 <label for="review_text">Enter a Review:</label>
-                <textarea id="review_text" name="review_text" rows="4" cols="50" placeholder="Enter a film review here..."></textarea>
+                <textarea id="review_text" name="review_text" class="form-control" rows="4" placeholder="Enter a film review here..."></textarea>
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
+        <br></br>
         <!-- Result Display (if result exists) -->
         {% if result %}
-            <div class="result">
-                <p>Review: {{ result.text }}</p>
-                <p>Classifier Prediction: {{ result.prediction }} using {{ result.model_used }}</p>
+            <div class="result text-center">
+                <p>Review: {{ result.text }}<br>
+                Classifier Prediction: {{ result.prediction }} using {{ result.model_used }}</p>
             </div>
         {% endif %}
     </div>
 </body>
 </html>
+
+
 
 
 

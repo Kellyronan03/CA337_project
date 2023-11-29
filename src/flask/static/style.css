@@ -5,7 +5,11 @@ body {
     padding: 0;
 }
 
-.container {
+.custom-container {
+    /* Renamed class to avoid conflict with Bootstrap's .container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -14,43 +18,25 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333;
-    text-align: center;
+/* Keep the focus styles for textarea and select */
+textarea:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-textarea {
-    padding: 10px;
+/* Custom style for result display */
+.result {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical;
 }
 
-select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.form-group {
-    margin-bottom: 20px;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .custom-container {
+        width: 90%;
+        margin: 20px auto;
+    }
 }
