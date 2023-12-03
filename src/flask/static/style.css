@@ -19,10 +19,9 @@ body {
 
 /* Keep the focus styles for textarea and select */
 textarea:focus, select:focus {
-    border-color: #0056b3;
-    padding: 15px;
+    background-color: #0056b3;
     outline: none;
-    font-weight: 500;
+
 }
 
 /* Custom style for result display */
