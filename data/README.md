@@ -1,0 +1,1 @@
+The reviews I got from chatgpt using the prompt "can you give me a test list in python of 10 dubious movie reviews 5 positive 5 negative that would be difficult for a classification algorithm to classify"
