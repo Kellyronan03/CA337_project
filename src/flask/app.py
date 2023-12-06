@@ -39,8 +39,6 @@ def predict():
         review = request.form['review_text']
         selected_model_id = request.form['model_selection']
         selected_model_name = model_names.get(selected_model_id, "Unknown Model")
-        
-        # Use the model identifier to get the actual model for prediction
         model_to_use = models[selected_model_id]
         prediction = model_to_use.predict(features.transform([review]))[0]
         
