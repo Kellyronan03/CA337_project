@@ -1,6 +1,10 @@
-# 2023-ca337-kellyr96
+# Sentiment Analysis Project
 
-This is my repository for ca337 (Data Science Application Domains 1).
+This repository contains coursework and assignments for the CA337 (Data Science Application Domains 1) module. The project focuses on sentiment analysis using various machine learning models.
 
+## Structure
 
-This is where i will complete my assignments for this module
+- `data/` - Contains datasets and related documentation.
+- `docs/` - Project reports and documentation.
+- `src/flask/` - Flask web application for sentiment prediction, including trained models and feature files.
+- `src/notebooks/` - Jupyter notebooks for assignments and exploratory analysis.
